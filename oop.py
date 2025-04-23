@@ -5,13 +5,32 @@
 ## is a paradigm, it enforces us to think about our code, its purpose, and makes us structure it. 
 
 # convention: camelcase for classes
-class BigObject: ## this class is only a blueprint
+#class BigObject: ## this class is only a blueprint
     # code
-    pass
+#    pass
+#obj1 = BigObject() #this is the actual object, which is an instance of the class. 
+#print(type(obj1))
 
-obj1 = BigObject() #this is the actual object, which is an instance of the class. 
-print(type(obj1))
+## Let's say we work for video game company:
+class PlayerCharacter:
+    ## special method, dunder method or magic method. WE use it as a constructor method or init methd. 
+    ## it is called automatically everytime we call an object or a class
+    ## self defines the class where its being called
+    def __init__(self, name, age): 
+        self.name = name ## atributes
+        self.age = age
 
+    def run(self):
+        print('run')
+        return 'done' ## to avoid the none printed if we dont use a return 
 
-
+player1 = PlayerCharacter('Juan',33)
+player2 = PlayerCharacter('Pedro',44)
+print(player1)    
+print(player1.name) 
+print(player1.age) 
+print(player2)    
+print(player2.name) 
+print(player2.age) 
+print(player1.run())
 
