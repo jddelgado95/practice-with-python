@@ -17,8 +17,8 @@ class PlayerCharacter:
     ## special method, dunder method or magic method. WE use it as a constructor method or init methd. 
     ## it is called automatically everytime we call an object or a class
     ## self defines the class where its being called
-    def __init__(self, name, age): 
-        if (PlayerCharacter.membership):
+    def __init__(self, name='anonymous', age=20): 
+        if (age > 18):
             self.name = name ## atributes
             self.age = age
 
@@ -31,6 +31,7 @@ class PlayerCharacter:
 
 player1 = PlayerCharacter('Juan',33)
 player2 = PlayerCharacter('Pedro',44)
+player3 = PlayerCharacter() # here we are using the default parametersof the constructor
 print(player1)    
 print(player1.name) 
 print(player1.age) 
@@ -42,3 +43,5 @@ print(player1.run())
 print(player1.membership)
 print(player1.shout())
 print(player2.shout())
+print(player3)
+print(player3.shout())
