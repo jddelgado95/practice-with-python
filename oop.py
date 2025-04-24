@@ -28,10 +28,24 @@ class PlayerCharacter:
     
     def shout(self):
         print(f'my name is {self.name}')
+    
+    ## is an inbuilt function in Python, which returns a class method for a given function. This means that classmethod() is a built-in Python function that transforms a regular method into a class method. When a method is defined using the @classmethod decorator (which internally calls classmethod()), the method is bound to the class and not to an instance of the class. As a result, the method receives the class (cls) as its first argument, rather than an instance (self)
+    @classmethod 
+    def adding_things(cls,num1, num2):
+        return cls('Teddy',num1 + num2) # here i can instantiate an object Teddy, with age num1 plus num2
+
+    ## is a decorator used to define a static method within a class. Static methods are functions that are bound to the class and not the instance of the class. They do not receive an implicit first argument (neither self nor cls) and cannot access or modify the class state
+    @staticmethod
+    def adding_things2(num1, num2):
+        return num1 + num2
 
 player1 = PlayerCharacter('Juan',33)
+print(player1.adding_things(2,3))
+print(PlayerCharacter.adding_things(2,3)) ## we don't need the object, we can use the class
 player2 = PlayerCharacter('Pedro',44)
 player3 = PlayerCharacter() # here we are using the default parametersof the constructor
+player4 = PlayerCharacter.adding_things(2,3)
+print(player4)
 print(player1)    
 print(player1.name) 
 print(player1.age) 
