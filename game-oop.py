@@ -1,0 +1,33 @@
+## Here we are explaining inheritance, which is the capacity of create subclass that are capable of inherit the capabilities of its parent classes. This is useful to avoid repeated proccesses, or repeated code. 
+
+## Polymorphism is another pillar of OOP. Classes and objects can share methods, but they not necessarily works the same way from one class to another. 
+
+class User: 
+    def sign_in(self):
+        print('logged in')
+
+class Wizard(User): ## pass the parent class
+    def __init__(self, name, power):
+        self.name = name 
+        self.power = power
+    def attack(self):
+        print(f'attacking with power of {self.power}')
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name 
+        self.num_arrows = num_arrows
+    def attack(self):
+        print(f'attacking with power of {self.num_arrows}')
+
+## built-in Python function that checks if an object is an instance of a specified class or a tuple of classes. It returns True if the object matches the type, and False otherwise. It is commonly used for type checking, offering flexibility by supporting inheritance and multiple types
+
+wizard1 = Wizard('Merlin',50)
+print(isinstance(wizard1, Wizard)) ## should print TRUE
+print(isinstance(wizard1, User)) ## should print TRUE
+## In Python, the object class serves as the root of the class hierarchy. Every class, by default, directly or indirectly inherits from object. This inheritance ensures that all classes possess fundamental attributes and methods defined by the object class.
+## When a class is defined without explicitly specifying a base class, Python automatically makes it a subclass of object
+print(isinstance(wizard1, object)) ##should print TRUE
+wizard1.attack()
+archer1 = Archer('Robin',100)
+archer1.attack()
